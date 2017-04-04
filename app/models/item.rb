@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :product
   belongs_to :fabric
-  has_many :item_inventories
+  has_many :item_inventories, dependent: :destroy
 
   accepts_nested_attributes_for :product, reject_if: lambda {|attributes| attributes['name'].blank? || attributes['sku'].blank?}
   accepts_nested_attributes_for :fabric, reject_if: lambda {|attributes| attributes['name'].blank? || attributes['sku'].blank?}
