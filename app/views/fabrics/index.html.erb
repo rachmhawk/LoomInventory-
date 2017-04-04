@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<header>Fabrics</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sku</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fabrics.each do |fabric| %>
+      <tr>
+        <td><%= fabric.name %></td>
+        <td><%= fabric.sku %></td>
+        <td><%= link_to 'Show', fabric %></td>
+        <td><%= link_to 'Edit', edit_fabric_path(fabric) %></td>
+        <td><%= link_to 'Destroy', fabric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fabric', new_fabric_path %>

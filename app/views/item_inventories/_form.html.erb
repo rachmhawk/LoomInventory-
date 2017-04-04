@@ -1,0 +1,32 @@
+<%= form_for(item_inventory) do |f| %>
+  <% if item_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item_inventory.errors.count, "error") %> prohibited this item_inventory from being saved:</h2>
+
+      <ul>
+      <% item_inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %>
+    <%= f.select(:item_id, Item.all.collect {|p| [ p.to_s, p.id ] }, { include_blank: true }) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :purchased_at %>
+    <%= f.datetime_select :purchased_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
