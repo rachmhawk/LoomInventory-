@@ -1,19 +1,80 @@
+body {
+  margin: 0 !important;
+}
+
 header{
 
-  border-top: 40px solid #333;
-  padding-bottom: 25px ;
+  width: 100%;
   padding-top: 25px ;
   margin-bottom: 25px;
-  border-width: auto;
   overflow: auto;
   text-transform: none;
   text-decoration: none;
   font-size: 30px;
 
+
 }
 
 h1{
+
+  width: 100%;
+  padding-top: 25px ;
+  padding-bottom: 25px ;
+  margin-bottom: 50px;
+  border-width: auto;
+  overflow: auto;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+
+h2{
+
+  width: 100%;
+  padding-top: 25px ;
+  padding-bottom: 25px ;
+  margin-bottom: 25px;
+  border-width: auto;
+  overflow: auto;
+  text-transform: none;
+  text-decoration: none;
+  font-size: 10px;
+
+
+}
+
+.heroimage{
+
+}
+
+h3{
 margin-top:75px;
 margin-bottom:50px;
 text-align: center;
+font-size: 20px;
+}
+
+
+main{
+  margin-left: 50px;
+  margin-right: 50px;
+  text-decoration: none;
+  text-transform: none;
+
+
+}
+
+#search-form{
+  background: black;
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+title{
+
+
 }

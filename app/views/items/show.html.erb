@@ -15,6 +15,30 @@
   <%= @item.item_inventories.count %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Purchased at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item.item_inventories.each do |item_inventory| %>
+      <tr>
+        <td><%= item_inventory.item.name %></td>
+        <td><%= item_inventory.purchased_at %></td>
+        <td><%= link_to 'Show', item_inventory %></td>
+        <td><%= link_to 'Edit', edit_item_inventory_path(item_inventory) %></td>
+        <td><%= link_to 'Destroy', item_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%# Create table/list of all inventory items (@item.item_inventories) %>
+
 
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
