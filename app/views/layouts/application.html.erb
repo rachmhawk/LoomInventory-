@@ -5,22 +5,51 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    <script src="https://unpkg.com/flatpickr"></script>
+    <%= %>
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=League+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">
   </head>
+
 
   <body>
     <header class="main-header">
+        <div class="heroimage"></div>
       <h1> Loom Decor Inventory </h1>
+
+
+
+      <nav>
+
+          <%= link_to 'Items', items_path() %>
+          <%= link_to 'New Item', new_item_path()%>
+          <%= link_to 'New Product', new_product_path()%>
+          <%= link_to 'New Fabric', new_fabric_path()%>
+          <%= link_to 'Inventory', item_inventories_path()%>
+
+      </nav>
       <%= form_tag(search_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Inventory" %>
           <%= submit_tag "Search", :name => nil %>
 
       <% end %>
-      <h3><%= yield :h2 %></h3>
+      <h2><%= yield :h2 %></h2>
 
     </header>
 
     <main class="main-content">
       <%= yield %>
     </main>
+    <footer>
+      <a href="#"> Back to top </a>
+    </footer>
+
+    <script type="text/javascript">
+      flatpickr(".datepickr",{
+        dateFormat:"m/d/Y"
+      })
+    </script>
   </body>
 </html>

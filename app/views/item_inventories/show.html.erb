@@ -7,7 +7,17 @@
 
 <p>
   <strong>Purchased at:</strong>
-  <%= @item_inventory.purchased_at %>
+  <%= format_datetime(@item_inventory.purchased_at) %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= format_datetime(@item_inventory.updated_at) %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @item_inventory.notes %>
 </p>
 
 <%= link_to 'Edit', edit_item_inventory_path(@item_inventory) %> |

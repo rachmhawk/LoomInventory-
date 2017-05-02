@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= f.label :purchased_at %>
-    <%= f.datetime_select :purchased_at %>
+    <%#= f.datetime_select :purchased_at %>
+    <%= f.text_field :purchased_at, class:"datepickr"%>
   </div>
 
   <div class="field">

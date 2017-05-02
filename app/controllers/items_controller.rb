@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
         quantity = params[:quantity].to_i
         quantity.times do
-          @item.item_inventories.create
+          @item.item_inventories.create(notes: params[:notes])
         end
 
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
